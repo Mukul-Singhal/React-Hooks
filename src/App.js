@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import UseState from "./Components/useState/UseState";
+import UsePrevState from "./Components/useState/UsePrevState";
+import UseStateObject from "./Components/useState/useStateObject";
+import UseStateArray from "./Components/useState/UseStateArray";
+import DataFetching from "./Components/useEffect/DataFetching";
+//
+import UseEffectExample from "./Components/useEffect/UseEffectExample";
 
+import ComponentA from "./Components/useReducer/ComponentA";
+
+export const UserContext = React.createContext();
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Use state hook */}
+      <UseState />
+      <UsePrevState />
+      <UseStateObject />
+      <UseStateArray />
+      <UseEffectExample />
+      <DataFetching />
+
+      <UserContext.Provider value={"Mukul"}>
+        <ComponentA />
+      </UserContext.Provider>
     </div>
   );
 }
